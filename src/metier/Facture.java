@@ -2,14 +2,14 @@ package metier;
 
 import java.time.LocalDate;
 
-public class Facture
+public class Facture 
 {
 	Client client;
 	private int montantFacture;
 	private LocalDate dateFacture;
 	boolean reglementFacture;
 
-	public Facture(Client client, int montant, boolean estReglee, LocalDate date)
+	public Facture(Client client, int montant, boolean estReglee, LocalDate date) 
 	{
 		this.client = client;
 		montantFacture = montant;
@@ -17,16 +17,11 @@ public class Facture
 		reglementFacture = false;
 	}
 
-
-
 	public Facture(int montant, Client client) {
 		// TODO Auto-generated constructor stub
 	}
 
-
-
-	public Client getClient()
-	{
+	public Client getClient() {
 		return client;
 	}
 
@@ -35,8 +30,7 @@ public class Facture
 	 * @return le montant de la facture.
 	 */
 
-	public int getMontant()
-	{
+	public int getMontant() {
 		return montantFacture;
 	}
 
@@ -45,7 +39,7 @@ public class Facture
 	 * @return vrai si la facture est reglée.
 	 */
 
-	public boolean estReglee()
+	public boolean estReglee() 
 	{
 		return reglementFacture;
 	}
@@ -55,7 +49,7 @@ public class Facture
 	 * @return la date de la facture.
 	 */
 
-	public LocalDate getDate()
+	public LocalDate getDate() 
 	{
 		return dateFacture;
 	}
@@ -64,7 +58,7 @@ public class Facture
 	 * Supprime la facture
 	 */
 
-	public void delete()
+	public void delete() 
 	{
 		client.delete();
 	}
@@ -74,7 +68,7 @@ public class Facture
 	 * @return une copie de la facture.
 	 */
 
-	public Facture copie()
+	public Facture copie() 
 	{
 		return client.createFacture(getMontant());
 	}

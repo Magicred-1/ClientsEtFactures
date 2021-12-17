@@ -3,18 +3,18 @@ package metier;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Client
+public class Client 
 {
 	private String nomClient;
-	static List<Facture> factures = new ArrayList<Facture>();
-	static List<Client> clients = new ArrayList<Client>();
+	static List < Facture > factures = new ArrayList < Facture > ();
+	static List < Client > clients = new ArrayList < Client > ();
 
 	/** 
 	 * Crée un client.
 	 * @param nom le nom du client. 
 	 */
 
-	public Client(String nom)
+	public Client(String nom) 
 	{
 		nomClient = nom;
 		clients.add(this);
@@ -25,7 +25,7 @@ public class Client
 	 * @return le nom du client.
 	 */
 
-	public String getNom()
+	public String getNom() 
 	{
 		return nomClient;
 	}
@@ -35,7 +35,7 @@ public class Client
 	 * @param nom le nom du client.
 	 */
 
-	public void setNom(String nom)
+	public void setNom(String nom) 
 	{
 		nomClient = nom;
 	}
@@ -46,8 +46,7 @@ public class Client
 	 * @return la facture créée.
 	 */
 
-	public Facture createFacture(int montant)
-	{
+	public Facture createFacture(int montant) {
 		Facture facture = new Facture(montant, this);
 		factures.add(facture);
 		return facture;
@@ -58,9 +57,8 @@ public class Client
 	 * @return une copie de la liste des factures du client.
 	 */
 
-	public List<Facture> getFactures()
-	{
-		List<Facture> Facture = new ArrayList<Facture>(factures);
+	public List < Facture > getFactures() {
+		List < Facture > Facture = new ArrayList < Facture > (factures);
 		return Facture;
 	}
 
@@ -69,10 +67,10 @@ public class Client
 	 * @return la somme des montants des factures.
 	 */
 
-	public int sommeMontants()
+	public int sommeMontants() 
 	{
 		int montant = 0;
-		for(int i = 0;i<factures.size();i++)
+		for (int i = 0; i < factures.size(); i++) 
 		{
 			montant = montant + factures.get(i).getMontant();
 		}
@@ -86,51 +84,49 @@ public class Client
 	 * @return la facture créée.
 	 */
 
-	public Facture createFacture(int montant, boolean reglee)
+	public Facture createFacture(int montant, boolean reglee) 
 	{
-		if (montant <= 0) {
+		if (montant <= 0) 
+		{
 			return null;
 		} else {
-		Facture facture = new Facture(montant, this);
-		factures.add(facture);
-		return facture;
+			Facture facture = new Facture(montant, this);
+			factures.add(facture);
+			return facture;
 		}
-	}	
+	}
 
 	/**
 	 * Retourne la liste des factures reglées. 
 	 * @return la liste des factures reglées.
 	 */
 
-	public List<Facture> facturesReglees()
+	public List < Facture > facturesReglees() 
 	{
-		List<Facture> Facture = new ArrayList<Facture>();
-        for(int i = 0;i<factures.size();i++)
-        {
-            if(factures.get(i).estReglee())
-            {
-                Facture.add(factures.get(i));
-            }
-        }
-        return Facture;
+		List < Facture > Facture = new ArrayList < Facture > ();
+		for (int i = 0; i < factures.size(); i++) 
+		{
+			if (factures.get(i).estReglee()) {
+				Facture.add(factures.get(i));
+			}
+		}
+		return Facture;
 	}
-
 
 	/**
 	 * Retourne tous les clients créés.
 	 * @return une copie de la liste de tous les clients.
 	 */
-	public static List<Client> tous()
+	public static List < Client > tous() 
 	{
-		return new ArrayList<Client>(clients);
+		return new ArrayList < Client > (clients);
 	}
 
 	/**
 	 * Supprime le client.
 	 */
 
-	public void delete()
-	{
+	public void delete(){
 		clients.remove(this);
 	}
 }
