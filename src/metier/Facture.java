@@ -19,6 +19,12 @@ public class Facture
 
 
 
+	public Facture(int montant, Client client) {
+		// TODO Auto-generated constructor stub
+	}
+
+
+
 	public Client getClient()
 	{
 		return client;
@@ -60,6 +66,7 @@ public class Facture
 
 	public void delete()
 	{
+		
 	}
 
 	/**
@@ -69,6 +76,6 @@ public class Facture
 
 	public Facture copie()
 	{
-		return null;
+		Facture.clone();
 	}
 }
