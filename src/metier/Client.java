@@ -6,8 +6,8 @@ import java.util.List;
 public class Client 
 {
 	private String nomClient;
-	static List < Facture > factures = new ArrayList < Facture > ();
-	static List < Client > clients = new ArrayList < Client > ();
+	private static List < Facture > factures = new ArrayList < Facture > ();
+	private static List < Client > clients = new ArrayList < Client > ();
 
 	/** 
 	 * Crée un client.
