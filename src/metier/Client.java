@@ -103,9 +103,9 @@ public class Client
 	 * @return la liste des factures reglées.
 	 */
 
-	public List < Facture > facturesReglees() 
+	public List <Facture> facturesReglees() 
 	{
-		List < Facture > Facture = new ArrayList < Facture > ();
+		List <Facture> Facture = new ArrayList <Facture> ();
 		for (int i = 0; i < factures.size(); i++) 
 		{
 			if (factures.get(i).estReglee()) {
