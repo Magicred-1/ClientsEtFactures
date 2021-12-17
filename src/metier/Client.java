@@ -5,6 +5,10 @@ import java.util.List;
 
 public class Client
 {
+	private String nomClient;
+	private List<Facture> factures = new ArrayList<Facture>();
+	private static List<Client> clients = new ArrayList<Client>();
+
 	/** 
 	 * Crée un client.
 	 * @param nom le nom du client. 
@@ -12,6 +16,8 @@ public class Client
 	
 	public Client(String nom)
 	{
+		nomClient = nom;
+		clients.add(this);
 	}
 
 	/**
@@ -21,7 +27,7 @@ public class Client
 	
 	public String getNom()
 	{
-		return null;
+		return nomClient;
 	}
 	
 	/**
@@ -31,6 +37,7 @@ public class Client
 	
 	public void setNom(String nom)
 	{
+		nomClient = nom;
 	}
 	
 	/**
@@ -41,7 +48,9 @@ public class Client
 	
 	public Facture createFacture(int montant)
 	{
-		return null;
+		Facture facture = new Facture(this);
+		factures.add(facture);
+		return facture;
 	}
 	
 	/**
@@ -51,7 +60,8 @@ public class Client
 
 	public List<Facture> getFactures()
 	{
-		return null;
+		List<Facture> Facture = new ArrayList<Facture>(factures);
+		return Facture;
 	}
 	
 	/**
@@ -61,7 +71,12 @@ public class Client
 	
 	public int sommeMontants()
 	{
-		return 0;
+		int montant = 0;
+		for(int i = 0;i<factures.size();i++)
+		{
+			montant = montant + factures.get(i).getMontant();
+		}
+		return montant;
 	}
 
 	/**
@@ -73,7 +88,9 @@ public class Client
 	
 	public Facture createFacture(int montant, boolean reglee)
 	{
-		return null;
+		Facture facture = new Facture(montant, this);
+		factures.add(facture);
+		return facture;
 	}	
 	
 	/**
@@ -102,5 +119,6 @@ public class Client
 	
 	public void delete()
 	{
+		clients.remove(this);
 	}
 }
