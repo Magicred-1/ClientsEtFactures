@@ -6,8 +6,8 @@ import java.util.List;
 public class Client 
 {
 	private String nomClient;
-	static List < Facture > factures = new ArrayList < Facture > ();
-	static List < Client > clients = new ArrayList < Client > ();
+	static List <Facture> factures = new ArrayList <Facture> ();
+	static List <Client> clients = new ArrayList <Client> ();
 
 	/** 
 	 * Crée un client.
@@ -58,9 +58,9 @@ public class Client
 	 * @return une copie de la liste des factures du client.
 	 */
 
-	public List < Facture > getFactures() 
+	public List <Facture> getFactures() 
 	{
-		List < Facture > Facture = new ArrayList < Facture > (factures);
+		List <Facture> Facture = new ArrayList <Facture> (factures);
 		return Facture;
 	}
 
@@ -119,9 +119,9 @@ public class Client
 	 * Retourne tous les clients créés.
 	 * @return une copie de la liste de tous les clients.
 	 */
-	public static List < Client > tous() 
+	public static List <Client> tous() 
 	{
-		return new ArrayList < Client > (clients);
+		return new ArrayList <Client> (clients);
 	}
 
 	/**
