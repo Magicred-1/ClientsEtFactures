@@ -66,7 +66,7 @@ public class Facture
 
 	public void delete()
 	{
-		
+		client.delete();
 	}
 
 	/**
@@ -76,6 +76,6 @@ public class Facture
 
 	public Facture copie()
 	{
-		Facture.clone();
+		return client.createFacture(getMontant());
 	}
 }

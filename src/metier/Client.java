@@ -88,9 +88,13 @@ public class Client
 
 	public Facture createFacture(int montant, boolean reglee)
 	{
+		if (montant <= 0) {
+			return null;
+		} else {
 		Facture facture = new Facture(montant, this);
 		factures.add(facture);
 		return facture;
+		}
 	}	
 
 	/**
