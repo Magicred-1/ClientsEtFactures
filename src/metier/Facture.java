@@ -16,10 +16,8 @@ public class Facture
 		dateFacture = LocalDate.now();
 		reglementFacture = false;
 	}
-	
-	public Facture(int montant, Client client) {
-		
-	}
+
+
 
 	public Client getClient()
 	{
@@ -30,7 +28,7 @@ public class Facture
 	 * Retourne le montant de la facture.
 	 * @return le montant de la facture.
 	 */
-	
+
 	public int getMontant()
 	{
 		return montantFacture;
@@ -40,7 +38,7 @@ public class Facture
 	 * Retourne vrai si la facture est reglée.
 	 * @return vrai si la facture est reglée.
 	 */
-	
+
 	public boolean estReglee()
 	{
 		return reglementFacture;
@@ -50,7 +48,7 @@ public class Facture
 	 * Retourne la date de la facture.
 	 * @return la date de la facture.
 	 */
-	
+
 	public LocalDate getDate()
 	{
 		return dateFacture;
@@ -59,17 +57,16 @@ public class Facture
 	/**
 	 * Supprime la facture
 	 */
-	
+
 	public void delete()
 	{
-		facture.remove(this);
 	}
-	
+
 	/**
 	 * Duplique la facture.
 	 * @return une copie de la facture.
 	 */
-	
+
 	public Facture copie()
 	{
 		return null;
