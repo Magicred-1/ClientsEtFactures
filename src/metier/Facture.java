@@ -17,9 +17,6 @@ public class Facture
 		reglementFacture = false;
 	}
 
-	public Facture(int montant, Client client) {
-		// TODO Auto-generated constructor stub
-	}
 
 	public Client getClient() {
 		return client;
