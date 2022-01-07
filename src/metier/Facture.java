@@ -9,7 +9,7 @@ public class Facture
 	private LocalDate dateFacture;
 	boolean reglementFacture;
 
-	public Facture(Client client, int montant, boolean estReglee, LocalDate date) 
+	public Facture(Client client, int montant, boolean reglementFacture, LocalDate date) 
 	{
 		this.client = client;
 		montantFacture = montant;
@@ -57,7 +57,7 @@ public class Facture
 
 	public void delete() 
 	{
-		client.delete();
+		getClient().getFactures().remove(this);
 	}
 
 	/**
@@ -67,6 +67,6 @@ public class Facture
 
 	public Facture copie() 
 	{
-		return client.createFacture(getMontant());
+		return getClient().createFacture(getMontant(), estReglee());
 	}
 }

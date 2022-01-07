@@ -91,14 +91,14 @@ public class Client
 	 * @return la facture créée.
 	 */
 
-	public Facture createFacture(int montant, boolean estreglee)
+	public Facture createFacture(int montant, boolean reglementFacture)
 	{
 		if (montant < 0) {
 			System.out.println("Le montant d'une facture ne peut pas être négatif.");
 			return null;
 		}
 		else {
-			Facture facture = new Facture(this, montant, estreglee, LocalDate.now());
+			Facture facture = new Facture(this, montant, reglementFacture, LocalDate.now());
 			factures.add(facture);
 			return facture;
 		}
@@ -112,15 +112,15 @@ public class Client
 	public List<Facture> facturesReglees()
 	{
 
-		List<Facture> Facture = new ArrayList<Facture>();
-		for(int i = 0;i<factures.size();i++)
+		List<Facture> factureReglees = new ArrayList<Facture>();
+		for(Facture facture : factures)
 		{
-			if(factures.get(i).estReglee())
+			if(facture.estReglee())
 			{
-				Facture.add(factures.get(i));
+				factureReglees.add(facture);
 			}
 		}
-		return Facture;
+		return factureReglees;
 	}
 
 	/**
